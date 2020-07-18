@@ -70,9 +70,6 @@ ACS_variables <- c(Total_V_Universe_  = "B21001_001",  # Total veteran universe
                    Not_Cit_O18_LEP_   = "C16008_023"   # Not a citizen 18-plus speaks English less than "very well"
                    )
 
-
-
-
 ACS_raw_data <- get_acs(geography = "county", variables = ACS_variables, # Make data call
                           state = statenumber, county=baycounties,
                           year=ACS_year,
@@ -83,7 +80,7 @@ Final <- ACS_raw_data %>%
   arrange(NAME) %>%                                                      # Sort by county
   select(-(grep("_M$", names(.), value=TRUE)))                           # Delete margin of error variables
 
-# Export Data
+# Export raw data for additional processing in Excel
 
 write.csv(Final,"ACS2018_Demographic_Variables.csv", row.names = FALSE, quote = T)
 
