@@ -20,7 +20,7 @@ census_api_key(censuskey, install = TRUE, overwrite = TRUE)
 
 # Import ACS library for variable inspection
 
-ACS_table <- load_variables(year=2018, dataset="acs5", cache=TRUE)
+ACS_table <- load_variables(year=2018, dataset="acs1", cache=TRUE)
 
 # Set up census variables for API
 
